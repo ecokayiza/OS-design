@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g -shared -Wl,-soname,libtime.so -o libtime.so CMakeFiles/time.dir/util/time_util.c.o 

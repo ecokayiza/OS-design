@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 3.5.0)
+project(design VERSION 0.1.0 LANGUAGES C)
+
+
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR})
+set(SOURCE ${CMAKE_SOURCE_DIR}/source)
+set(EXE ${CMAKE_SOURCE_DIR}/commands)
+
+
+add_library(util SHARED ${CMAKE_SOURCE_DIR}/util/functions.c)
+add_library(time SHARED ${CMAKE_SOURCE_DIR}/util/time_util.c)
+
+add_executable(CLS ${SOURCE}/CLS.c)
+set_target_properties(CLS PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(CLS util)
+
+
+add_executable(DATE ${SOURCE}/DATE.c)
+set_target_properties(DATE PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(DATE util time)
+
+add_executable(TIME ${SOURCE}/TIME.c)
+set_target_properties(TIME PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(TIME util time)
+
+add_executable(FIND ${SOURCE}/FIND.c)
+set_target_properties(FIND PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(FIND util)
+
+add_executable(FINDSTR ${SOURCE}/FINDSTR.c)
+set_target_properties(FINDSTR PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(FINDSTR util)

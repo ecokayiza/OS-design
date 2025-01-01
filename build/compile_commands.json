@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc -Dutil_EXPORTS -I/home/eco/桌面/design/include -g -fPIC -o CMakeFiles/util.dir/util/functions.c.o -c /home/eco/桌面/design/util/functions.c",
+  "file": "/home/eco/桌面/design/util/functions.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc -Dtime_EXPORTS -I/home/eco/桌面/design/include -g -fPIC -o CMakeFiles/time.dir/util/time_util.c.o -c /home/eco/桌面/design/util/time_util.c",
+  "file": "/home/eco/桌面/design/util/time_util.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/CLS.dir/source/CLS.c.o -c /home/eco/桌面/design/source/CLS.c",
+  "file": "/home/eco/桌面/design/source/CLS.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/DATE.dir/source/DATE.c.o -c /home/eco/桌面/design/source/DATE.c",
+  "file": "/home/eco/桌面/design/source/DATE.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/TIME.dir/source/TIME.c.o -c /home/eco/桌面/design/source/TIME.c",
+  "file": "/home/eco/桌面/design/source/TIME.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/FIND.dir/source/FIND.c.o -c /home/eco/桌面/design/source/FIND.c",
+  "file": "/home/eco/桌面/design/source/FIND.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/FINDSTR.dir/source/FINDSTR.c.o -c /home/eco/桌面/design/source/FINDSTR.c",
+  "file": "/home/eco/桌面/design/source/FINDSTR.c"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/TIME.dir/source/TIME.c.o -o ../commands/TIME  -Wl,-rpath,/home/eco/桌面/design/build libutil.so libtime.so 

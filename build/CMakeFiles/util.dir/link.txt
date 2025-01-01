@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g -shared -Wl,-soname,libutil.so -o libutil.so CMakeFiles/util.dir/util/functions.c.o 

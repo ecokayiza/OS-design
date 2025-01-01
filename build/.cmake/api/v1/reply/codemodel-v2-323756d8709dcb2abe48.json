@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "design",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CLS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CLS-Debug-4c446693154eb4dbfbfe.json",
+					"name" : "CLS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DATE::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DATE-Debug-0e7d465961dcb5135fd8.json",
+					"name" : "DATE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FIND::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FIND-Debug-b52c5e9c02d2a7d299e2.json",
+					"name" : "FIND",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FINDSTR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FINDSTR-Debug-99c78bdd91048d873b37.json",
+					"name" : "FINDSTR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TIME::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TIME-Debug-4eb81aa7c84fc15f2169.json",
+					"name" : "TIME",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "time::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-time-Debug-286e1d91965a414974e7.json",
+					"name" : "time",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "util::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-util-Debug-eeceaa961b4401865ffd.json",
+					"name" : "util",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/eco/\u684c\u9762/design/build",
+		"source" : "/home/eco/\u684c\u9762/design"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "unistd.h": "c",
+        "functions.h": "c",
+        "time.h": "c",
+        "syscall.h": "c",
+        "time_types.h": "c"
+    }
+}

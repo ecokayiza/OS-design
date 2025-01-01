@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/FINDSTR.dir/source/FINDSTR.c.o -o ../commands/FINDSTR  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 

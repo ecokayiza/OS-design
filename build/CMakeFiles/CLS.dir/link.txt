@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/CLS.dir/source/CLS.c.o -o ../commands/CLS  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 
