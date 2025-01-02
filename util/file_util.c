@@ -16,6 +16,16 @@ struct LINE_INFO{
     int if_in;
 };
 
+struct COMP_INFO
+{
+    int offset;
+    int line;
+    char file1;
+    char file2;
+};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //计算部分匹配表（前缀函数）
 void compute_prefix_function(const char *pattern, int *prefix, int m) {
     int length = 0;
@@ -37,6 +47,7 @@ void compute_prefix_function(const char *pattern, int *prefix, int m) {
     }
 }
 
+//KMP字符匹配
 int contains(const char *text_p, const char *pattern, int i_option) {
     char *text;
     if(i_option){
@@ -129,8 +140,6 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
             print("Could not compile regex\n");
             exit(1);
         }
-        ///// to do
-        ////////////////////////////////////////////////////////////
         while(fgets(line, sizeof(line), file)){
             line_num++;
             result[i].line = strdup(line);
@@ -141,7 +150,6 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
             if (!reti) 
                 result[i].if_in = 1;
             i++;
-        ////////////////////////////////////////////////////////////////////
         }
         regfree(&regex);
     }else{
@@ -241,4 +249,91 @@ struct LINE_INFO *search_dir(const char *dir_p, const char *pattern_p, int i_opt
     return result;
 }
 
-////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int comp_file_size(const char * file1, const char* file2){
+    FILE *fp1 = fopen(file1, "rb");
+    FILE *fp2 = fopen(file2, "rb");
+    if (fp1 == NULL || fp2 == NULL) {
+        perror("Error opening file");
+        exit(1);
+    }
+    //移动指针到末尾
+    fseek(fp1, 0, SEEK_END);
+    fseek(fp2, 0, SEEK_END);
+    //其位置即为大小
+    long size1 = ftell(fp1);
+    long size2 = ftell(fp2);
+    fclose(fp1);
+    fclose(fp2);
+    if (size1 == size2) 
+        return 1;
+    return 0;
+    }
+
+
+
+struct COMP_INFO* compare(const char * file1, const char* file2, int n_lines, int c_mode){
+    FILE *fp1 = fopen(file1, "r");
+    FILE *fp2 = fopen(file2, "r");
+    if (fp1 == NULL || fp2 == NULL) {
+        perror("Error opening file");
+        exit(1);
+    }
+    // c_mode 不区分ASCII大小写
+    // n_lines 指定匹配的行范围
+    if(n_lines == 0){
+        n_lines = MAX_FILE_LINE;
+    }
+    struct COMP_INFO *result = (struct COMP_INFO *)malloc(MAX_FILE_LINE * sizeof(struct COMP_INFO));
+    int offset = 0;
+    int line = 1;
+    int i = 0;
+    result[0].line = 0;
+
+    while (!feof(fp1) && !feof(fp2)) {
+        char ch1 = fgetc(fp1);
+        char ch2 = fgetc(fp2);
+        if(c_mode){
+            ch1 = tolower(ch1);
+            ch2 = tolower(ch2);
+        }
+        if (ch1 != ch2) {
+            result[i].offset = offset;
+            result[i].line = line;
+            result[i].file1 = ch1;
+            result[i].file2 = ch2;
+            i++;
+            if(i > 9){ //找到10个不同项则停止匹配
+                break;
+            }
+        }
+        if (ch1 == '\n') {
+            line++;
+            if (line > n_lines) { //匹配行数限制
+                break;
+            }
+        }
+        offset++;
+    }
+    result[i].line = 0;
+    fclose(fp1);
+    fclose(fp2);
+
+    // for(int j = 0; j < i; j++){
+
+    //     print("line:");
+    //     print(int_to_char(result[j].line));
+    //     print(" ");
+    //     char str[2] = {result[j].file1, '\0'};
+    //     print(str);
+    //     print(" ");
+    //     char str2[2] = {result[j].file2, '\0'};
+    //     print(str2);
+    //     print("\n");
+    // }
+
+
+
+    return result;
+}

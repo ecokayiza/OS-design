@@ -61,13 +61,20 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    
 
-    print("---------------");
-    print(file_path);
-
+    file_path = get_abs_path(file_path);
 
     FILE *file = fopen(file_path, "r");
-    struct LINE_INFO* result = search(file, pattern, i_option);
+    if (file == NULL) {
+        print("Error: Unable to open file\n");
+        return 1;
+    }
+    
+    print("---------------");
+    print(file_path);
+    struct LINE_INFO* result = (struct LINE_INFO *)malloc(MAX_FILE_LINE * sizeof(struct LINE_INFO));
+    result = search(file, pattern, i_option);
 
     if(v_option){
                 if(c_option){

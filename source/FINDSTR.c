@@ -145,6 +145,10 @@ int main(int argc, char *argv[]) {
 
         for(int i = 0; i < file_count; i++){
             FILE *file = fopen(file_paths[i], "r");
+            if (file == NULL) {
+                print("Error: Unable to open file\n");
+                return 1;
+            }
             result =multi_search(file, patterns, pattern_count, i_option, r_option);
             fclose(file);
             results[i] = result;
