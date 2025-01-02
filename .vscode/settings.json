@@ -4,6 +4,8 @@
         "functions.h": "c",
         "time.h": "c",
         "syscall.h": "c",
-        "time_types.h": "c"
+        "time_types.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c"
     }
 }

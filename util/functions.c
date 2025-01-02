@@ -1,14 +1,20 @@
 #include "functions.h"
 #include <unistd.h>
 #include <sys/syscall.h>
+#include <sys/types.h>
+
+
 ///////////////////////////
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <regex.h>
+#include <dirent.h>
+#include <sys/stat.h>
 #define MAX_FILE_LINE 1024
 #define MAX_LINE_LEN 1024
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -291,4 +297,65 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
     }
     return result;
 }
+
+char * get_abs_path(const char* filename)
+{
+    char cwd[1024];
+    if (getcwd(cwd, sizeof(cwd)) == NULL) {
+        // print("Current working dir: ");
+        // print(cwd);
+        // print("\n");
+        perror("getcwd() error");
+        exit(1);
+    } 
+    char *full_path = malloc(1024);
+    int l = 0;
+    for (l; cwd[l];l++)
+        full_path[l] = cwd[l];
+    full_path[l] = '/';
+    int m = 0;
+    for (m; filename[m]; m++)
+        full_path[l+m+1] = filename[m];
+    full_path[l+m+1] = '\0';
+    return full_path;
+}
+
+struct LINE_INFO *search_dir(const char *dir_p, const char *pattern_p, int i_option, int full_path_option)
+{
+    DIR *dir; //目录流
+    struct dirent *entry; //目录项
+    struct LINE_INFO *result = (struct LINE_INFO *)malloc(MAX_FILE_LINE * sizeof(struct LINE_INFO));
+    char *pattern;
+    pattern = strdup(pattern_p);
+
+    if(i_option){
+        for (int j = 0; pattern[j]; j++) 
+            pattern[j] = tolower(pattern[j]);
+    }
+    if ((dir = opendir(dir_p)) == NULL) {
+        perror("opendir() error");
+        exit(1);
+    } 
+    
+    int i = 0;
+    while ((entry = readdir(dir)) != NULL) {
+            char *file_name = entry->d_name;
+            if (contains(file_name, pattern, i_option)) {
+                    if(full_path_option){
+                    char *full_path = get_abs_path(file_name);
+                    result[i].line = strdup(full_path);
+                    free(full_path);
+                    }else{
+                        result[i].line = strdup(file_name);
+                    }
+                result[i].line_num = i + 1;
+                result[i].if_in = 1;
+                i++;
+            }
+        
+    }
+
+    return result;
+}
+
 ////////////////////////////////////////////////////////////////
