@@ -363,12 +363,13 @@ struct FC_COMP_INFO* fc_compare(const char * file1, const char* file2, int c_mod
         if(line_num > MAX_FILE_LINE){
             break;
         }
-        result[i].file1 = line1;
-        result[i].file2 = line2;
-        result[i].line = line_num;
+
 
         char *line1_dup = strdup(line1);
         char *line2_dup = strdup(line2);
+        result[i].file1 = line1_dup;
+        result[i].file2 = line2_dup;
+        result[i].line = line_num;
 
         if (c_mode) {
             for (int j = 0; line1_dup[j]; j++) 
@@ -381,12 +382,14 @@ struct FC_COMP_INFO* fc_compare(const char * file1, const char* file2, int c_mod
         if (strcmp(line1_dup, line2_dup) == 0) { 
             result[i].is_diff = 0;  //相同
         } else {
+            // print(int_to_char(line_num));
+            // print("\n");
             result[i].is_diff = 1;  //不同
         }
         
         i++;
-        free(line1_dup);
-        free(line2_dup);
+        // free(line1_dup);
+        // free(line2_dup);
     }
     result[i].line = 0;
 

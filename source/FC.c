@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "file_util.h"
+#include <string.h>
 
 
 
@@ -9,6 +10,104 @@ void display_help(){
     print("匹配模式:\n/c 不区别大小写进行比较。\n/b 执行字节比较,显示如\noffset : byte1 byte2 \n\n显示模式:\n/n 显示行数\n/a 只显示每个不同处的第一行和最后一行。\n\n");
 }
 //开关/b是独立的
+
+struct FC_COMP_INFO
+{
+    int line;
+    int is_diff;
+    char* file1;
+    char* file2;
+};
+
+struct FC_COMP_INFO* get_display_line(struct FC_COMP_INFO* result,int a_option,int n_option,const char* file1_name,const char* file2_name){
+    //显示的行包括所以不同的行及其上下行
+
+    int LINE_NUM = MAX_FILE_LINE + 1;
+    int *display_line = (int *)malloc(LINE_NUM * sizeof(int));
+    memset(display_line, 0, LINE_NUM* sizeof(int));
+
+    if(result[0].is_diff){  //处理第一行
+        display_line[0] = 1;
+        display_line[1] = 1;
+    }
+
+    int i = 1;                          // 假定 n 为 result 的最后一个下标（行号n+1)
+    for (i; result[i + 1].line; i++)  //填充diff行前后，从下标1开始到n-1 
+    {
+        if(result[i].is_diff){
+            display_line[i-1] = 1;
+            display_line[i] = 1;
+            display_line[i+1] = 1;
+        }
+    }
+    if(result[i].is_diff){   //处理最后一行 i=n
+        display_line[i-1] = 1;
+        display_line[i] = 1;
+    }
+    i++;
+    display_line[i] = 0;   //n+1的位置封0用于判断边界
+
+    // for (int l = 0; l < i + 1;l++){
+    //     print(int_to_char(display_line[l]));
+    // }
+
+    if (!a_option){
+        int j = 0;
+        for (j; j < i; j++)
+        {
+            if (display_line[j])
+            {
+                print("*****"); // 一个section的开始
+                print(file1_name);
+                print("\n");
+                if (n_option)
+                {
+                    print("[");
+                    print(int_to_char(result[j].line));
+                    print("]");
+                }
+                print(result[j].file1);
+                int k = j;
+                while (display_line[k + 1]) // 走完一个section
+                {
+                    if (n_option)
+                    {
+                        print("[");
+                        print(int_to_char(result[k+1].line));
+                        print("]");
+                    }
+                    print(result[k + 1].file1);
+                    k++;
+                }
+                ////////////////////////////////////////////////////////
+                print("*****"); // 到file2
+                print(file2_name);
+                print("\n");
+
+                if (n_option)
+                {
+                    print("[");
+                    print(int_to_char(result[j].line));
+                    print("]");
+                }
+                print(result[j].file2);
+                while (display_line[j + 1])
+                { // 这里要实际改动j
+                    if (n_option)
+                    {
+                        print("[");
+                        print(int_to_char(result[j+1].line));
+                        print("]");
+                    }
+                    print(result[j + 1].file2);
+                    j++; // 最后j的位置display为0
+                }
+                print("\n");
+            }
+        }
+    }
+}
+
 
 
 
@@ -72,12 +171,19 @@ int main(int argc, char *argv[]) {
 
     // compare
     ////////////////////////////////////////////////////////////////////////////////////
-    struct LINE_INFO *result;
+    struct FC_COMP_INFO *result;
     if(!b_mode){
         result = fc_compare(file1, file2, c_mode);
-        
-
+        get_display_line(result,a_option,n_option,file1,file2);
+        // for (int i = 0; result[i].line;i++){
+        //     if(result[i].is_diff){
+        //         print("line: ");
+        //         print(int_to_char(result[i].line));
+        //         print("\n");
+        //     }
+        // }
     }
+
 
 
 
