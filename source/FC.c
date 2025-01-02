@@ -105,6 +105,89 @@ struct FC_COMP_INFO* get_display_line(struct FC_COMP_INFO* result,int a_option,i
                 print("\n");
             }
         }
+    }else{
+        int j = 0;
+        for (j; j < i; j++)
+        {
+            if (display_line[j])
+            {
+                print("*****"); // 一个section的开始 j是一个secion的头部
+                print(file1_name);
+                print("\n");
+                if (n_option)
+                {
+                    print("[");
+                    print(int_to_char(result[j].line));
+                    print("]");
+                }
+                print(result[j].file1);
+
+                //中间
+                int k = j;
+                int len = 1;
+                while (display_line[k + 1]){
+                    len++;
+                    k++;
+                }
+                if(len==3){
+                    if (n_option)
+                    {
+                        print("[");
+                        print(int_to_char(result[j+1].line));
+                        print("]");
+                    }
+                    print(result[j + 1].file1);
+                }else{
+                    print("...");
+                    print("\n");
+                }
+
+                // k处于section尾部
+                if (n_option){
+                        print("[");
+                        print(int_to_char(result[k].line));
+                        print("]");
+                }
+                print(result[k].file1);
+
+                ////////////////////////////////////////////////////////
+                print("*****"); // 到file2
+                print(file2_name);
+                print("\n");
+                if (n_option)
+                {
+                    print("[");
+                    print(int_to_char(result[j].line));
+                    print("]");
+                }
+                print(result[j].file2);
+                
+                //中间
+                if(len==3){
+                    if (n_option)
+                    {
+                        print("[");
+                        print(int_to_char(result[j+1].line));
+                        print("]");
+                    }
+                    print(result[j + 1].file2);
+                }else{
+                    print("...");
+                    print("\n");
+                }
+
+                //尾部
+                if (n_option){
+                        print("[");
+                        print(int_to_char(result[k].line));
+                        print("]");
+                }
+                print(result[k].file2);
+
+                j=k+1;  //更新j
+                print("\n");
+            }
+        }
     }
 }
 
@@ -171,24 +254,21 @@ int main(int argc, char *argv[]) {
 
     // compare
     ////////////////////////////////////////////////////////////////////////////////////
-    struct FC_COMP_INFO *result;
+    
     if(!b_mode){
+        struct FC_COMP_INFO *result;
         result = fc_compare(file1, file2, c_mode);
         get_display_line(result,a_option,n_option,file1,file2);
-        // for (int i = 0; result[i].line;i++){
-        //     if(result[i].is_diff){
-        //         print("line: ");
-        //         print(int_to_char(result[i].line));
-        //         print("\n");
-        //     }
-        // }
+    }else{
+        struct COMP_INFO *result;
+        result = compare(file1, file2, 0, c_mode);  //用COMP
+
+
+
+
+
+
+
     }
-
-
-
-
-
-
-
     return 0;
 }
