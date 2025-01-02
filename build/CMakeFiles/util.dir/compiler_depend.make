@@ -71,8 +71,11 @@ CMakeFiles/util.dir/util/functions.c.o: ../util/functions.c \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/ctype.h
+  /usr/include/ctype.h \
+  /usr/include/regex.h
 
+
+/usr/include/regex.h:
 
 /usr/include/strings.h:
 

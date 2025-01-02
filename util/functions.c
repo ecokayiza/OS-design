@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <regex.h>
 #define MAX_FILE_LINE 1024
 #define MAX_LINE_LEN 1024
 
@@ -179,6 +180,10 @@ int contains(const char *text_p, const char *pattern, int i_option) {
     return 0;
 }
 
+int contains_regex(const char *text, const char *pattern) {
+    
+}
+
 struct LINE_INFO{
     char *line;
     int line_num;
@@ -215,7 +220,7 @@ struct LINE_INFO* search(FILE *file, const char *pattern_p, int i_option)
     return result;
 }
 
-struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_count ,int i_option)
+struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_count ,int i_option,int r_option)
 {
     struct LINE_INFO *result = (struct LINE_INFO *)malloc(MAX_FILE_LINE * sizeof(struct LINE_INFO));
     char line[MAX_LINE_LEN];
@@ -223,40 +228,66 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
     int i = 0;
     char *patterns[pattern_count];
 
-    // for(int j = 0; j < pattern_count; j++){
-    //     print(patterns_p[j]);
-    //     print("\n");
-    // }
-
-    if(i_option){
-        for (int j = 0; j < pattern_count; j++){
-            patterns[j] = strdup(patterns_p[j]);
-            for (int k = 0; patterns[j][k]; k++) 
-                patterns[j][k] = tolower(patterns[j][k]);
-        }                          
-    }else{
-        for (int j = 0; j < pattern_count; j++){
-            patterns[j] = strdup(patterns_p[j]);
-            }
+    for(int j = 0; j < pattern_count; j++){
+        print(patterns_p[j]);
+        print("\n");
     }
-
-
-    while(fgets(line, sizeof(line), file)){
-        line_num++;
-        result[i].line = strdup(line);
-        result[i].line_num = line_num;
-        result[i].if_in = 0;
-        for (int j = 0; j < pattern_count; j++)
-        {
-            if (contains(line, patterns[j], i_option))
-            {
-                // print("  find\n");
-                // print(line);
-                result[i].if_in = 1;
-                break;
-            }
+    if(r_option){
+        regex_t regex;
+        int reti;
+        if (i_option) {
+            reti = regcomp(&regex, patterns_p[0], REG_ICASE | REG_EXTENDED);
+        } else {
+            reti = regcomp(&regex, patterns_p[0], REG_EXTENDED);
         }
-        i++;
+        if (reti) {
+            print("Could not compile regex\n");
+            exit(1);
+        }
+        ///// to do
+        ////////////////////////////////////////////////////////////
+        while(fgets(line, sizeof(line), file)){
+            line_num++;
+            result[i].line = strdup(line);
+            result[i].line_num = line_num;
+            result[i].if_in = 0;
+            // print(line);
+            reti = regexec(&regex, line, 0, NULL, 0);
+            if (!reti) 
+                result[i].if_in = 1;
+            i++;
+        ////////////////////////////////////////////////////////////////////
+        }
+        regfree(&regex);
+    }else{
+        if(i_option){
+            for (int j = 0; j < pattern_count; j++){
+                patterns[j] = strdup(patterns_p[j]);
+                for (int k = 0; patterns[j][k]; k++) 
+                    patterns[j][k] = tolower(patterns[j][k]);
+            }                          
+        }else{
+            for (int j = 0; j < pattern_count; j++){
+                patterns[j] = strdup(patterns_p[j]);
+                }
+        }
+        while(fgets(line, sizeof(line), file)){
+            line_num++;
+            result[i].line = strdup(line);
+            result[i].line_num = line_num;
+            result[i].if_in = 0;
+            for (int j = 0; j < pattern_count; j++)
+            {
+                if (contains(line, patterns[j], i_option))
+                {
+                    // print("  find\n");
+                    // print(line);
+                    result[i].if_in = 1;
+                    break;
+                }
+            }
+            i++;
+        }
     }
     return result;
 }

@@ -23,6 +23,6 @@ int check_permission();
 struct LINE_INFO;
 struct LINE_INFO *search(FILE *file, const char *pattern_p, int i_option);
 int contains(const char *text, const char *pattern, int i_option);
-struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_count ,int i_option);
+struct LINE_INFO *multi_search(FILE *file, const char *patterns_p[], int pattern_count, int i_option, int r_option);
 
 #endif // FUNCTIONS_H

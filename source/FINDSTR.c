@@ -8,7 +8,7 @@ struct LINE_INFO{
 };
 
 void display_help() {
-    print("1-在FIND的基础上添加了多匹配模式与多文件支持\n   如 FINDSTR -pattern1 -pattern2 +path1 +path2\n2-添加了对当前目录的支持\n  如 FINDSTR -pattern +filename\n");
+    print("1-在FIND的基础上添加了多匹配模式与多文件支持\n    如 FINDSTR -pattern1 -pattern2 +path1 +path2\n2-添加了表达式的支持\n    如 FINDSTR -regexp +filename (为了防止终端转义请在给表达式加上\" \") /R\n3.添加文件搜索\n    如 FINDSTR -filename.fix =dir path\n\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     int c_option = 0;
     int n_option = 0;
     int i_option = 0;
-
+    int r_option = 0;
 
     const char *patterns[argc - 1];
     int pattern_count = 0;
@@ -50,6 +50,9 @@ int main(int argc, char *argv[]) {
                 n_option = 1;
             if(argv[i][1] == 'I'||argv[i][1] == 'i')
                 i_option = 1;
+            if(argv[i][1] == 'R'||argv[i][1] == 'r')
+                r_option = 1;
+
         }else if(argv[i][0] == '-' && argv[i][1] != '\0'){
             patterns[pattern_count] = argv[i]+1;
             pattern_count++;
@@ -72,11 +75,7 @@ int main(int argc, char *argv[]) {
         perror("getcwd() error");
         return 1;
     } 
-    // for (int i = 0; i < pattern_count; i++)
-    // {
-    //     print(patterns[i]);
-    //     print("\n");
-    // }
+
     for (int i = 0; i < file_count; i++)
     {
         if(!contains(file_paths[i],"/",0)){
@@ -97,13 +96,24 @@ int main(int argc, char *argv[]) {
     //     print(file_paths[i]);
     //     print("\n");
     // }
+    // for (int i = 0; i < pattern_count; i++)
+    // {
+    //     print(patterns[i]);
+    //     print("\n");
+    // }
+    if(r_option){
+        if(pattern_count != 1){
+            print("请只使用一个表达式\n");
+            return 0;
+        }
+    }
 
     struct LINE_INFO *result;
     struct LINE_INFO **results = (struct LINE_INFO **)malloc(file_count * MAX_FILE_LINE * sizeof(struct LINE_INFO *));
 
     for(int i = 0; i < file_count; i++){
         FILE *file = fopen(file_paths[i], "r");
-        result =multi_search(file, patterns, pattern_count, i_option);
+        result =multi_search(file, patterns, pattern_count, i_option, r_option);
         fclose(file);
         results[i] = result;
     }
@@ -115,7 +125,7 @@ int main(int argc, char *argv[]) {
         print(file_paths[i]);
 
         if(v_option){
-                    if(c_option){
+                if(c_option){
                 int count = 0;
                 for(int i = 0; result[i].line != NULL; i++){
                     if(!result[i].if_in){
