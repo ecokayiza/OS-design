@@ -24,6 +24,14 @@ struct COMP_INFO
     char file2;
 };
 
+struct FC_COMP_INFO
+{
+    int line;
+    int is_diff;
+    char* file1;
+    char* file2;
+};
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //计算部分匹配表（前缀函数）
@@ -332,8 +340,57 @@ struct COMP_INFO* compare(const char * file1, const char* file2, int n_lines, in
     //     print(str2);
     //     print("\n");
     // }
+    return result;
+}
 
 
+struct FC_COMP_INFO* fc_compare(const char * file1, const char* file2, int c_mode)
+{
+    FILE *fp1 = fopen(file1, "r");
+    FILE *fp2 = fopen(file2, "r");
+    if (fp1 == NULL || fp2 == NULL) {
+        perror("Error opening file");
+        exit(1);
+    }
+    struct FC_COMP_INFO *result = (struct FC_COMP_INFO *)malloc(MAX_FILE_LINE * sizeof(struct LINE_INFO));
+    char line1[MAX_LINE_LEN];
+    char line2[MAX_LINE_LEN];
+    int line_num = 0;
+    int i = 0;
 
+    while (fgets(line1, sizeof(line1), fp1) && fgets(line2, sizeof(line2), fp2)) {
+        line_num++;
+        if(line_num > MAX_FILE_LINE){
+            break;
+        }
+        result[i].file1 = line1;
+        result[i].file2 = line2;
+        result[i].line = line_num;
+
+        char *line1_dup = strdup(line1);
+        char *line2_dup = strdup(line2);
+
+        if (c_mode) {
+            for (int j = 0; line1_dup[j]; j++) 
+                line1_dup[j] = tolower(line1_dup[j]);
+            for (int j = 0; line2_dup[j]; j++) 
+                line2_dup[j] = tolower(line2_dup[j]);
+        }
+
+        result[i].line = line_num;
+        if (strcmp(line1_dup, line2_dup) == 0) { 
+            result[i].is_diff = 0;  //相同
+        } else {
+            result[i].is_diff = 1;  //不同
+        }
+        
+        i++;
+        free(line1_dup);
+        free(line2_dup);
+    }
+    result[i].line = 0;
+
+    fclose(fp1);
+    fclose(fp2);
     return result;
 }

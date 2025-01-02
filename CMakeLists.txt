@@ -37,3 +37,7 @@ target_link_libraries(FINDSTR util file)
 add_executable(COMP ${SOURCE}/COMP.c)
 set_target_properties(COMP PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
 target_link_libraries(COMP util file)
+
+add_executable(FC ${SOURCE}/FC.c)
+set_target_properties(FC PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(FC util file)

@@ -233,6 +233,19 @@ COMP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/build
 .PHONY : COMP/fast
 
+#=============================================================================
+# Target rules for targets named FC
+
+# Build rule for target.
+FC: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FC
+.PHONY : FC
+
+# fast build rule for target.
+FC/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FC.dir/build.make CMakeFiles/FC.dir/build
+.PHONY : FC/fast
+
 source/CLS.o: source/CLS.c.o
 .PHONY : source/CLS.o
 
@@ -304,6 +317,30 @@ source/DATE.s: source/DATE.c.s
 source/DATE.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DATE.dir/build.make CMakeFiles/DATE.dir/source/DATE.c.s
 .PHONY : source/DATE.c.s
+
+source/FC.o: source/FC.c.o
+.PHONY : source/FC.o
+
+# target to build an object file
+source/FC.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FC.dir/build.make CMakeFiles/FC.dir/source/FC.c.o
+.PHONY : source/FC.c.o
+
+source/FC.i: source/FC.c.i
+.PHONY : source/FC.i
+
+# target to preprocess a source file
+source/FC.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FC.dir/build.make CMakeFiles/FC.dir/source/FC.c.i
+.PHONY : source/FC.c.i
+
+source/FC.s: source/FC.c.s
+.PHONY : source/FC.s
+
+# target to generate assembly for a file
+source/FC.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FC.dir/build.make CMakeFiles/FC.dir/source/FC.c.s
+.PHONY : source/FC.c.s
 
 source/FIND.o: source/FIND.c.o
 .PHONY : source/FIND.o
@@ -460,6 +497,7 @@ help:
 	@echo "... CLS"
 	@echo "... COMP"
 	@echo "... DATE"
+	@echo "... FC"
 	@echo "... FIND"
 	@echo "... FINDSTR"
 	@echo "... TIME"
@@ -475,6 +513,9 @@ help:
 	@echo "... source/DATE.o"
 	@echo "... source/DATE.i"
 	@echo "... source/DATE.s"
+	@echo "... source/FC.o"
+	@echo "... source/FC.i"
+	@echo "... source/FC.s"
 	@echo "... source/FIND.o"
 	@echo "... source/FIND.i"
 	@echo "... source/FIND.s"

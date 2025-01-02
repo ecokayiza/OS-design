@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/FC.dir/source/FC.c.o -o ../commands/FC  -Wl,-rpath,/home/eco/桌面/design/build libutil.so libfile.so 
