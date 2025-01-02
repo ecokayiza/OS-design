@@ -262,6 +262,8 @@ int main(int argc, char *argv[]) {
     print("\n");
     file1 = get_abs_path(file1);
     file2 = get_abs_path(file2);
+    if((b_mode && n_option))
+        print("/n与/b不兼容\n");
     //////////////////////////////////////////////////////////////////////////////////
 
     // compare
@@ -274,7 +276,7 @@ int main(int argc, char *argv[]) {
         for (int i = 0; result[i].line; i++){
             if(result[i].is_diff){
                 get_display_line(result, a_option, n_option, file1, file2);
-                return;
+                return 0;
             }
         }
         print("两个文件相同\n");
@@ -282,15 +284,32 @@ int main(int argc, char *argv[]) {
     }else{
         struct COMP_INFO *result;
         result = compare(file1, file2, 0, c_mode);  //用了利用COMP
-
+        int diff_flag = 0;
         for(int i = 0; result[i].line; i++){    
-            
+            int offset = result[i].offset;
+            int diff1_num = (int)result[i].file1;
+            int diff2_num = (int)result[i].file2;
+            char * offset_str = malloc(80); 
+            char * diff1 = malloc(10);
+            char * diff2 = malloc(10);
+            sprintf(offset_str, "%08x", offset);
+            sprintf(diff1, "%02x", diff1_num);
+            sprintf(diff2, "%02x", diff2_num);
+            print(offset_str);
+            print(": ");
+            print(diff1);
+            print(" ");
+            print(diff2);
+            print("\n");
+            diff_flag++;
+            if(diff_flag > 20){
+                print("不同项超过20,文件不匹配\n");
+                return 0;
+            }
         }
-
-
-
-
-
+        if(!diff_flag){
+            print("两个文件相同\n");
+        }
     }
     return 0;
 }
