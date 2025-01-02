@@ -365,10 +365,12 @@ struct FC_COMP_INFO* fc_compare(const char * file1, const char* file2, int c_mod
         }
 
 
-        char *line1_dup = strdup(line1);
+        char *line1_dup = strdup(line1); //用于比较
         char *line2_dup = strdup(line2);
-        result[i].file1 = line1_dup;
-        result[i].file2 = line2_dup;
+        char *line1_dupp = strdup(line1);
+        char *line2_dupp = strdup(line2);
+        result[i].file1 = line1_dupp;  //保存原始行
+        result[i].file2 = line2_dupp;
         result[i].line = line_num;
 
         if (c_mode) {
@@ -388,8 +390,8 @@ struct FC_COMP_INFO* fc_compare(const char * file1, const char* file2, int c_mod
         }
         
         i++;
-        // free(line1_dup);
-        // free(line2_dup);
+        free(line1_dup);
+        free(line2_dup);
     }
     result[i].line = 0;
 

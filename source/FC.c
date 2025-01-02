@@ -18,6 +18,13 @@ struct FC_COMP_INFO
     char* file1;
     char* file2;
 };
+struct COMP_INFO
+{
+    int offset;
+    int line;
+    char file1;
+    char file2;
+};
 
 struct FC_COMP_INFO* get_display_line(struct FC_COMP_INFO* result,int a_option,int n_option,const char* file1_name,const char* file2_name){
     //显示的行包括所以不同的行及其上下行
@@ -248,6 +255,11 @@ int main(int argc, char *argv[]) {
         print("格式错误,请输入两个文件\n");
         return 1;
     }
+    print("正在比较文件");
+    print(file1);
+    print("和");
+    print(file2);
+    print("\n");
     file1 = get_abs_path(file1);
     file2 = get_abs_path(file2);
     //////////////////////////////////////////////////////////////////////////////////
@@ -258,12 +270,22 @@ int main(int argc, char *argv[]) {
     if(!b_mode){
         struct FC_COMP_INFO *result;
         result = fc_compare(file1, file2, c_mode);
-        get_display_line(result,a_option,n_option,file1,file2);
+
+        for (int i = 0; result[i].line; i++){
+            if(result[i].is_diff){
+                get_display_line(result, a_option, n_option, file1, file2);
+                return;
+            }
+        }
+        print("两个文件相同\n");
+            
     }else{
         struct COMP_INFO *result;
-        result = compare(file1, file2, 0, c_mode);  //用COMP
+        result = compare(file1, file2, 0, c_mode);  //用了利用COMP
 
-
+        for(int i = 0; result[i].line; i++){    
+            
+        }
 
 
 
