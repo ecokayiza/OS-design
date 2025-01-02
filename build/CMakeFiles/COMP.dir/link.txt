@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/COMP.dir/source/COMP.c.o -o ../commands/COMP  -Wl,-rpath,/home/eco/桌面/design/build libutil.so libfile.so 

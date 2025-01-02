@@ -119,8 +119,7 @@ int main(int argc, char *argv[]) {
         }
     }
     if(dir_path){
-        if(!contains(dir_path,"/",0))
-            dir_path = get_abs_path(dir_path);
+        dir_path = get_abs_path(dir_path);
     }
     // for (int i = 0; i < file_count; i++){
     //     print(file_paths[i]);

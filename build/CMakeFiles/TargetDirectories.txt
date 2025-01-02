@@ -6,5 +6,6 @@
 /home/eco/桌面/design/build/CMakeFiles/TIME.dir
 /home/eco/桌面/design/build/CMakeFiles/FIND.dir
 /home/eco/桌面/design/build/CMakeFiles/FINDSTR.dir
+/home/eco/桌面/design/build/CMakeFiles/COMP.dir
 /home/eco/桌面/design/build/CMakeFiles/edit_cache.dir
 /home/eco/桌面/design/build/CMakeFiles/rebuild_cache.dir

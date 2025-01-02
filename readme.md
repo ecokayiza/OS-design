@@ -74,7 +74,26 @@ FIND [/V] [/C] [/N] [/I]  -[string] +[file path]
 ```
 
 7. COMP,
+```
+用于比较两个文件是否相同
+COMP  +data1 +data2 [/n] [/c] [/l] [/d] [/a]
 
+一个匹配结果如:
+offset / line 
+file1 = diff 
+file2 = diff
+(如果没指定/n则文件大小必须相同，如果找到10个不同项则停止匹配)
+
+匹配模式
+ /n=num 如果文件大小不匹配，启用n来指定匹配的行数, 并启用 /l
+ /c 匹配的ASCII字符不区别大小
+
+显示模式
+ /l 显示行号 
+ /d 用十进制显示dff
+ /a 用ASCII显示diff
+
+```
 8. FC,
 
 9. EXIT,

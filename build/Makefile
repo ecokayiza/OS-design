@@ -220,6 +220,19 @@ FINDSTR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FINDSTR.dir/build.make CMakeFiles/FINDSTR.dir/build
 .PHONY : FINDSTR/fast
 
+#=============================================================================
+# Target rules for targets named COMP
+
+# Build rule for target.
+COMP: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 COMP
+.PHONY : COMP
+
+# fast build rule for target.
+COMP/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/build
+.PHONY : COMP/fast
+
 source/CLS.o: source/CLS.c.o
 .PHONY : source/CLS.o
 
@@ -243,6 +256,30 @@ source/CLS.s: source/CLS.c.s
 source/CLS.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CLS.dir/build.make CMakeFiles/CLS.dir/source/CLS.c.s
 .PHONY : source/CLS.c.s
+
+source/COMP.o: source/COMP.c.o
+.PHONY : source/COMP.o
+
+# target to build an object file
+source/COMP.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/source/COMP.c.o
+.PHONY : source/COMP.c.o
+
+source/COMP.i: source/COMP.c.i
+.PHONY : source/COMP.i
+
+# target to preprocess a source file
+source/COMP.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/source/COMP.c.i
+.PHONY : source/COMP.c.i
+
+source/COMP.s: source/COMP.c.s
+.PHONY : source/COMP.s
+
+# target to generate assembly for a file
+source/COMP.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/source/COMP.c.s
+.PHONY : source/COMP.c.s
 
 source/DATE.o: source/DATE.c.o
 .PHONY : source/DATE.o
@@ -421,6 +458,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CLS"
+	@echo "... COMP"
 	@echo "... DATE"
 	@echo "... FIND"
 	@echo "... FINDSTR"
@@ -431,6 +469,9 @@ help:
 	@echo "... source/CLS.o"
 	@echo "... source/CLS.i"
 	@echo "... source/CLS.s"
+	@echo "... source/COMP.o"
+	@echo "... source/COMP.i"
+	@echo "... source/COMP.s"
 	@echo "... source/DATE.o"
 	@echo "... source/DATE.i"
 	@echo "... source/DATE.s"

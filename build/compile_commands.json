@@ -38,5 +38,10 @@
   "directory": "/home/eco/桌面/design/build",
   "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/FINDSTR.dir/source/FINDSTR.c.o -c /home/eco/桌面/design/source/FINDSTR.c",
   "file": "/home/eco/桌面/design/source/FINDSTR.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/COMP.dir/source/COMP.c.o -c /home/eco/桌面/design/source/COMP.c",
+  "file": "/home/eco/桌面/design/source/COMP.c"
 }
 ]

@@ -179,6 +179,10 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
 
 char * get_abs_path(const char* filename)
 {
+    if(contains(filename,"/",0)){
+        return strdup(filename);
+    }
+
     char cwd[1024];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
         // print("Current working dir: ");

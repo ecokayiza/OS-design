@@ -47,4 +47,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TIME.dir/DependInfo.cmake"
   "CMakeFiles/FIND.dir/DependInfo.cmake"
   "CMakeFiles/FINDSTR.dir/DependInfo.cmake"
+  "CMakeFiles/COMP.dir/DependInfo.cmake"
   )

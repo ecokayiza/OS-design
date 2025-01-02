@@ -71,6 +71,7 @@ all: CMakeFiles/DATE.dir/all
 all: CMakeFiles/TIME.dir/all
 all: CMakeFiles/FIND.dir/all
 all: CMakeFiles/FINDSTR.dir/all
+all: CMakeFiles/COMP.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -86,6 +87,7 @@ clean: CMakeFiles/DATE.dir/clean
 clean: CMakeFiles/TIME.dir/clean
 clean: CMakeFiles/FIND.dir/clean
 clean: CMakeFiles/FINDSTR.dir/clean
+clean: CMakeFiles/COMP.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -95,7 +97,7 @@ clean: CMakeFiles/FINDSTR.dir/clean
 CMakeFiles/util.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=15,16 "Built target util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=17,18 "Built target util"
 .PHONY : CMakeFiles/util.dir/all
 
 # Build rule for subdir invocation for target.
@@ -121,7 +123,7 @@ CMakeFiles/util.dir/clean:
 CMakeFiles/time.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/time.dir/build.make CMakeFiles/time.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/time.dir/build.make CMakeFiles/time.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=13,14 "Built target time"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=15,16 "Built target time"
 .PHONY : CMakeFiles/time.dir/all
 
 # Build rule for subdir invocation for target.
@@ -147,7 +149,7 @@ CMakeFiles/time.dir/clean:
 CMakeFiles/file.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=11,12 "Built target file"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=13,14 "Built target file"
 .PHONY : CMakeFiles/file.dir/all
 
 # Build rule for subdir invocation for target.
@@ -200,7 +202,7 @@ CMakeFiles/DATE.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/DATE.dir/all: CMakeFiles/time.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DATE.dir/build.make CMakeFiles/DATE.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DATE.dir/build.make CMakeFiles/DATE.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=3,4 "Built target DATE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=5,6 "Built target DATE"
 .PHONY : CMakeFiles/DATE.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,7 +229,7 @@ CMakeFiles/TIME.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/TIME.dir/all: CMakeFiles/time.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TIME.dir/build.make CMakeFiles/TIME.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TIME.dir/build.make CMakeFiles/TIME.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=9,10 "Built target TIME"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=11,12 "Built target TIME"
 .PHONY : CMakeFiles/TIME.dir/all
 
 # Build rule for subdir invocation for target.
@@ -254,7 +256,7 @@ CMakeFiles/FIND.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/FIND.dir/all: CMakeFiles/file.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FIND.dir/build.make CMakeFiles/FIND.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FIND.dir/build.make CMakeFiles/FIND.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=5,6 "Built target FIND"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=7,8 "Built target FIND"
 .PHONY : CMakeFiles/FIND.dir/all
 
 # Build rule for subdir invocation for target.
@@ -281,7 +283,7 @@ CMakeFiles/FINDSTR.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/FINDSTR.dir/all: CMakeFiles/file.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FINDSTR.dir/build.make CMakeFiles/FINDSTR.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FINDSTR.dir/build.make CMakeFiles/FINDSTR.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=7,8 "Built target FINDSTR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=9,10 "Built target FINDSTR"
 .PHONY : CMakeFiles/FINDSTR.dir/all
 
 # Build rule for subdir invocation for target.
@@ -299,6 +301,33 @@ FINDSTR: CMakeFiles/FINDSTR.dir/rule
 CMakeFiles/FINDSTR.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FINDSTR.dir/build.make CMakeFiles/FINDSTR.dir/clean
 .PHONY : CMakeFiles/FINDSTR.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/COMP.dir
+
+# All Build rule for target.
+CMakeFiles/COMP.dir/all: CMakeFiles/util.dir/all
+CMakeFiles/COMP.dir/all: CMakeFiles/file.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=3,4 "Built target COMP"
+.PHONY : CMakeFiles/COMP.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/COMP.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eco/桌面/design/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/COMP.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eco/桌面/design/build/CMakeFiles 0
+.PHONY : CMakeFiles/COMP.dir/rule
+
+# Convenience name for target.
+COMP: CMakeFiles/COMP.dir/rule
+.PHONY : COMP
+
+# clean rule for target.
+CMakeFiles/COMP.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP.dir/build.make CMakeFiles/COMP.dir/clean
+.PHONY : CMakeFiles/COMP.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
