@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "file_util.h"
 #define MAX_FILE_LINE 1024
 #define MAX_LINE_LEN 1024
 

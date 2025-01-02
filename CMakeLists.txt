@@ -11,6 +11,7 @@ set(EXE ${CMAKE_SOURCE_DIR}/commands)
 
 add_library(util SHARED ${CMAKE_SOURCE_DIR}/util/functions.c)
 add_library(time SHARED ${CMAKE_SOURCE_DIR}/util/time_util.c)
+add_library(file SHARED ${CMAKE_SOURCE_DIR}/util/file_util.c)
 
 add_executable(CLS ${SOURCE}/CLS.c)
 set_target_properties(CLS PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
@@ -27,8 +28,8 @@ target_link_libraries(TIME util time)
 
 add_executable(FIND ${SOURCE}/FIND.c)
 set_target_properties(FIND PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
-target_link_libraries(FIND util)
+target_link_libraries(FIND util file)
 
 add_executable(FINDSTR ${SOURCE}/FINDSTR.c)
 set_target_properties(FINDSTR PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
-target_link_libraries(FINDSTR util)
+target_link_libraries(FINDSTR util file)

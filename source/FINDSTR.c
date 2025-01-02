@@ -1,6 +1,6 @@
 #include "functions.h"
 #include <stdlib.h>
-
+#include "file_util.h"
 struct LINE_INFO{
     char *line;
     int line_num;

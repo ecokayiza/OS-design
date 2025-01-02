@@ -93,6 +93,7 @@ FINDSTR_EXTERNAL_OBJECTS =
 ../commands/FINDSTR: CMakeFiles/FINDSTR.dir/source/FINDSTR.c.o
 ../commands/FINDSTR: CMakeFiles/FINDSTR.dir/build.make
 ../commands/FINDSTR: libutil.so
+../commands/FINDSTR: libfile.so
 ../commands/FINDSTR: CMakeFiles/FINDSTR.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../commands/FINDSTR"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FINDSTR.dir/link.txt --verbose=$(VERBOSE)

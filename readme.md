@@ -39,42 +39,38 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 5. FIND,
 ```
-find [/v] [/c] [/n] [/i] [/off[line]] <"string"> [[<drive>:][<path>]<filename>[...]]
-参数
-参数	说明
-/v	显示不包含指定 <string> 的所有行。
-/c	对包含指定 <string> 的行进行计数，并显示总计。
-/n	每行前面都有文件的行号。
-/i	指定搜索不区分大小写。
-<"string">	必需。 指定想要搜索的字符组（用引号括起来）。
-[<drive>:][<path>]<filename>	指定要在其中搜索指定字符串的文件的位置和名称。
-/?	在命令提示符下显示帮助。
+FIND [/V] [/C] [/N] [/I]  -[string] +[file path]
+
+  /V         显示所有未包含指定字符串的行。
+  /C         仅显示包含字符串的行数。
+  /N         显示行号。
+  /I         搜索字符串时忽略大小写。
+
+  -[string] 指定要搜索的文本字符串。
+  +[file path] 文件路径
 ```
 6. FINDSTR,
 ```
-findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] [/c:<string>] [/g:<file>] [/d:<dirlist>] [/a:<colorattribute>] [/off[line]] <strings> [<drive>:][<path>]<filename>[ ...]
-参数	说明
-/b	如果文本模式位于行的开头，则匹配该模式。
-/e	如果文本模式位于行的末尾，则匹配该模式。
-/l	逐字处理搜索字符串。
-/r	将搜索字符串作为正则表达式进行处理。 这是默认设置。
-/s	搜索当前目录和所有子目录。
-/i	在搜索字符串时忽略字符大小写。
-/x	打印完全匹配的行。
-/v	仅打印不包含匹配项的行。
-/n	打印匹配的每一行的行号。
-/m	如果文件包含匹配项，则仅打印文件名。
-/o	打印每个匹配行之前的字符偏移量。
-/p	跳过包含不可打印字符的文件。
-/off[line]	不跳过设置了脱机属性的文件。
-/f:<file>	从指定文件获取文件列表。
-/c:<string>	使用指定的文本作为文本搜索字符串。
-/g:<file>	从指定文件获取搜索字符串。
-/d:<dirlist>	搜索指定的目录列表。 每个目录都必须用分号 (;) 分隔，例如 dir1;dir2;dir3。
-/a:<colorattribute>	指定具有两个十六进制数字的颜色属性。 键入 color /?，获取其他信息。
-<strings>	指定要在 filename 中搜索的文本。 必需。
-[\<drive>:][<path>]<filename>[...]	指定要搜索的位置和文件。 至少需要一个文件名。
-/?	在命令提示符下显示帮助。
+1-在FIND的基础上添加了多匹配模式与多文件支持
+    如 FINDSTR -pattern1 -pattern2 +path1 +path2
+2-添加了表达式的支持和当前路径的支持
+    如 FINDSTR -regexp +filename (为了防止终端转义请在给表达式加上" ") /R
+3.添加文件搜索
+    如 FINDSTR -filename.fix /d:dir path
+
+参数说明:
+
+文件内容搜索(支持多pattern、多文件)
+/i 不区分大小写搜索
+/v 反转匹配
+/c 仅显示匹配的行数
+/n 显示匹配行的行号
+/r 使用正则表达式匹配
+
+目录搜索  FINDSTR -pattern /d:dir [/i] [/f]
+/i 不区分大小写搜索
+/f 显示完整路径
+(目录搜索只支持一个pattern)
 ```
 
 7. COMP,

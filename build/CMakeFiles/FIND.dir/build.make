@@ -93,6 +93,7 @@ FIND_EXTERNAL_OBJECTS =
 ../commands/FIND: CMakeFiles/FIND.dir/source/FIND.c.o
 ../commands/FIND: CMakeFiles/FIND.dir/build.make
 ../commands/FIND: libutil.so
+../commands/FIND: libfile.so
 ../commands/FIND: CMakeFiles/FIND.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eco/桌面/design/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../commands/FIND"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FIND.dir/link.txt --verbose=$(VERBOSE)

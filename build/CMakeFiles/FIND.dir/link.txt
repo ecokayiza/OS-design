@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/FIND.dir/source/FIND.c.o -o ../commands/FIND  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 
+/usr/bin/cc -g CMakeFiles/FIND.dir/source/FIND.c.o -o ../commands/FIND  -Wl,-rpath,/home/eco/桌面/design/build libutil.so libfile.so 

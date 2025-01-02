@@ -11,6 +11,11 @@
 },
 {
   "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc -Dfile_EXPORTS -I/home/eco/桌面/design/include -g -fPIC -o CMakeFiles/file.dir/util/file_util.c.o -c /home/eco/桌面/design/util/file_util.c",
+  "file": "/home/eco/桌面/design/util/file_util.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
   "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/CLS.dir/source/CLS.c.o -c /home/eco/桌面/design/source/CLS.c",
   "file": "/home/eco/桌面/design/source/CLS.c"
 },

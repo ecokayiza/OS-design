@@ -66,8 +66,11 @@ CMakeFiles/FINDSTR.dir/source/FINDSTR.c.o: ../source/FINDSTR.c \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  ../include/file_util.h
 
+
+../include/file_util.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 

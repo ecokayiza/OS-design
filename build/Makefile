@@ -143,6 +143,19 @@ time/fast:
 .PHONY : time/fast
 
 #=============================================================================
+# Target rules for targets named file
+
+# Build rule for target.
+file: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 file
+.PHONY : file
+
+# fast build rule for target.
+file/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/build
+.PHONY : file/fast
+
+#=============================================================================
 # Target rules for targets named CLS
 
 # Build rule for target.
@@ -327,6 +340,30 @@ source/TIME.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TIME.dir/build.make CMakeFiles/TIME.dir/source/TIME.c.s
 .PHONY : source/TIME.c.s
 
+util/file_util.o: util/file_util.c.o
+.PHONY : util/file_util.o
+
+# target to build an object file
+util/file_util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/util/file_util.c.o
+.PHONY : util/file_util.c.o
+
+util/file_util.i: util/file_util.c.i
+.PHONY : util/file_util.i
+
+# target to preprocess a source file
+util/file_util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/util/file_util.c.i
+.PHONY : util/file_util.c.i
+
+util/file_util.s: util/file_util.c.s
+.PHONY : util/file_util.s
+
+# target to generate assembly for a file
+util/file_util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file.dir/build.make CMakeFiles/file.dir/util/file_util.c.s
+.PHONY : util/file_util.c.s
+
 util/functions.o: util/functions.c.o
 .PHONY : util/functions.o
 
@@ -388,6 +425,7 @@ help:
 	@echo "... FIND"
 	@echo "... FINDSTR"
 	@echo "... TIME"
+	@echo "... file"
 	@echo "... time"
 	@echo "... util"
 	@echo "... source/CLS.o"
@@ -405,6 +443,9 @@ help:
 	@echo "... source/TIME.o"
 	@echo "... source/TIME.i"
 	@echo "... source/TIME.s"
+	@echo "... util/file_util.o"
+	@echo "... util/file_util.i"
+	@echo "... util/file_util.s"
 	@echo "... util/functions.o"
 	@echo "... util/functions.i"
 	@echo "... util/functions.s"

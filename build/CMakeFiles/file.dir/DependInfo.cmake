@@ -8,13 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/eco/桌面/design/source/FIND.c" "CMakeFiles/FIND.dir/source/FIND.c.o" "gcc" "CMakeFiles/FIND.dir/source/FIND.c.o.d"
+  "/home/eco/桌面/design/util/file_util.c" "CMakeFiles/file.dir/util/file_util.c.o" "gcc" "CMakeFiles/file.dir/util/file_util.c.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/eco/桌面/design/build/CMakeFiles/util.dir/DependInfo.cmake"
-  "/home/eco/桌面/design/build/CMakeFiles/file.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

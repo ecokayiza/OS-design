@@ -174,6 +174,7 @@ int main(int argc, char *argv[]) {
     char *user_time;
     if (argc == 1){
         display_current_time();
+        print("请输入新的时间:\n");
         user_time = scan();
     }
     else{

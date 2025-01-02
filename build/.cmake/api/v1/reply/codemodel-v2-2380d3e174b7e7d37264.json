@@ -21,7 +21,8 @@
 						3,
 						4,
 						5,
-						6
+						6,
+						7
 					]
 				}
 			],
@@ -42,7 +43,8 @@
 						3,
 						4,
 						5,
-						6
+						6,
+						7
 					]
 				}
 			],
@@ -51,36 +53,43 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CLS::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CLS-Debug-4c446693154eb4dbfbfe.json",
+					"jsonFile" : "target-CLS-Debug-2d71230da22833af5ff1.json",
 					"name" : "CLS",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "DATE::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DATE-Debug-0e7d465961dcb5135fd8.json",
+					"jsonFile" : "target-DATE-Debug-ea71bb8a3389b231efe9.json",
 					"name" : "DATE",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "FIND::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FIND-Debug-b52c5e9c02d2a7d299e2.json",
+					"jsonFile" : "target-FIND-Debug-abdeb2689a6896e8e281.json",
 					"name" : "FIND",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "FINDSTR::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FINDSTR-Debug-99c78bdd91048d873b37.json",
+					"jsonFile" : "target-FINDSTR-Debug-dd6f1869a76520d0e2f4.json",
 					"name" : "FINDSTR",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "TIME::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TIME-Debug-4eb81aa7c84fc15f2169.json",
+					"jsonFile" : "target-TIME-Debug-6c39195143e68c2f3692.json",
 					"name" : "TIME",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-file-Debug-573822b0694e0dae9b82.json",
+					"name" : "file",
 					"projectIndex" : 0
 				},
 				{

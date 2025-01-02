@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g -shared -Wl,-soname,libfile.so -o libfile.so CMakeFiles/file.dir/util/file_util.c.o 

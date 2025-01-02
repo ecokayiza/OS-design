@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/eco/\u684c\u9762/design/commands/FIND"
+			"path" : "/home/eco/\u684c\u9762/design/commands/FINDSTR"
 		}
 	],
 	"backtrace" : 1,
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 35,
 				"parent" : 0
 			},
 			{
@@ -71,9 +71,13 @@
 		{
 			"backtrace" : 2,
 			"id" : "util::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "file::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "FIND::@6890427a1f51a3e7e1df",
+	"id" : "FINDSTR::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -94,12 +98,17 @@
 				"backtrace" : 2,
 				"fragment" : "libutil.so",
 				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libfile.so",
+				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
-	"name" : "FIND",
-	"nameOnDisk" : "FIND",
+	"name" : "FINDSTR",
+	"nameOnDisk" : "FINDSTR",
 	"paths" : 
 	{
 		"build" : ".",
@@ -120,7 +129,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "source/FIND.c",
+			"path" : "source/FINDSTR.c",
 			"sourceGroupIndex" : 0
 		}
 	],
