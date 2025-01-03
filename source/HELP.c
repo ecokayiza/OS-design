@@ -4,7 +4,7 @@ void display_help(){
     print("提供命令的帮助信息。\n\nHELP [command]\ncommand - 显示该命令的帮助信息。\n\n");
 }
 void display_commands(){
-    print("有关某个命令的详细信息，请键入 HELP 命令名\nCLS        清除屏幕\nDATE       显示或设定日期\nTIME       显示或设定时间\nDOSKEY     用于编辑命令行宏\nFIND       用于匹配文件内容\nFINDSTR    用于匹配文件或文件内容\nCOMP       以字节方式比较两个文件\nFC         以行比较两个文件并显示差异\nEXIT       退出当前程序\nMORE       显示来自管道的文件信息\n\n");
+    print("有关某个命令的详细信息，请键入 HELP 命令名\nCLS        清除屏幕\nDATE       显示或设定日期\nTIME       显示或设定时间\nDOSKEY     用于查看命令行历史或编辑宏\nFIND       用于匹配文件内容\nFINDSTR    用于匹配文件或文件内容\nCOMP       以字节方式比较两个文件\nFC         以行比较两个文件并显示差异\nEXIT       退出当前程序\nMORE       显示来自管道的文件信息\n\n");
 }
 
 int main(int argc, char* argv[]){

@@ -26,7 +26,7 @@
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-cc288c36c23739585617.json",
+			"jsonFile" : "codemodel-v2-cce9b37b4650497f073d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-0010c2c1ef7672669781.json",
+			"jsonFile" : "cmakeFiles-v1-1df65d089cf23af551a3.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -64,39 +64,6 @@
 	],
 	"reply" : 
 	{
-		"client-integration-vscode" : 
-		{
-			"cache-v2" : 
-			{
-				"jsonFile" : "cache-v2-05e9f22b43a05a667676.json",
-				"kind" : "cache",
-				"version" : 
-				{
-					"major" : 2,
-					"minor" : 0
-				}
-			},
-			"cmakeFiles-v1" : 
-			{
-				"jsonFile" : "cmakeFiles-v1-0010c2c1ef7672669781.json",
-				"kind" : "cmakeFiles",
-				"version" : 
-				{
-					"major" : 1,
-					"minor" : 0
-				}
-			},
-			"codemodel-v2" : 
-			{
-				"jsonFile" : "codemodel-v2-cc288c36c23739585617.json",
-				"kind" : "codemodel",
-				"version" : 
-				{
-					"major" : 2,
-					"minor" : 3
-				}
-			}
-		},
 		"client-vscode" : 
 		{
 			"query.json" : 
@@ -132,7 +99,7 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-cc288c36c23739585617.json",
+						"jsonFile" : "codemodel-v2-cce9b37b4650497f073d.json",
 						"kind" : "codemodel",
 						"version" : 
 						{
@@ -150,7 +117,7 @@
 						}
 					},
 					{
-						"jsonFile" : "cmakeFiles-v1-0010c2c1ef7672669781.json",
+						"jsonFile" : "cmakeFiles-v1-1df65d089cf23af551a3.json",
 						"kind" : "cmakeFiles",
 						"version" : 
 						{

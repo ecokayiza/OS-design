@@ -31,6 +31,10 @@ long get_time_stamp() {
     return seconds;
 }
 
+int is_leap_year(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
 /////////////////////////
 //获取指定日期的秒数
 long get_seconds_from_date(int year,int month,int day){
@@ -49,12 +53,13 @@ long get_seconds_from_date(int year,int month,int day){
         days += days_in_month[i-1];
     }
     days += day;
-    while (year > 1970)
+    year--;
+    while (year >= 1970)
     {
         days += is_leap_year(year) ? 366 : 365;
         year--;
     }
-    days -= 2;
+    days -= 1;
     long seconds = days * 86400;
     return seconds;
 }
@@ -72,12 +77,12 @@ long get_seconds_from_time(int hour,int minute,int second){
 
 
 //检查润年
-int is_leap_year(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-}
+
 
 //从时间戳获取日期
 struct DATE get_date_from_stamp(long seconds) {
+    
+
     int days = seconds / 86400;
     days++;
     int year = 1970;
@@ -105,10 +110,26 @@ struct DATE get_date_from_stamp(long seconds) {
     month++;
 
     struct DATE date={0,0,0,0};
+
+    int day_seconds = seconds % 86400;
+    int hour = day_seconds / 3600;
+
+    // 时区修正 (UTC+8)
+    hour = (hour + 8);
+    if(hour >=24){
+        days++;
+        if(days > days_in_month[month-1]){
+            days = 1;
+            month++;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+        }
+    }
     date.year = year;
     date.month = month;
     date.day = days;
-
     //星期公式
     // W= (d+2*m+3*(m+1)/5+y+y/4-y/100+y/400) mod 7
     

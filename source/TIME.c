@@ -20,7 +20,7 @@ void show_time(struct TIME time){
     if(time.minute < 10) print("0");
     print(int_to_char(time.minute));
     print(":");
-    if(time.minute < 10) print("0");
+    if(time.second < 10) print("0");
     print(int_to_char(time.second));
     print("\n\n");
 }

@@ -155,41 +155,39 @@ void set_sys_time(int year,int month,int day) {
     // print("\n");
 
     long secs = get_seconds_from_date(year, month, day);
+
     
-    //还原当天时间
+
+    // 还原当天时间
     struct timespec ts;
     syscall(SYS_clock_gettime, CLOCK_REALTIME, &ts);
     int day_seconds = ts.tv_sec % 86400;
-    secs += day_seconds;
+    secs += day_seconds;                  //国际时区的当天日期
+
+    
+
+    int hour = day_seconds / 3600;  //比如设置 8.20  04h
+                            //国际时间为 8.19  20h
+    // print("inter hour ");
+    // print(int_to_char(hour));
+    // print("\n");
+
+    if (hour + 8 >= 24)
+    {
+        secs -= 86400;
+    }
 
     // print("get time stamp : ");
     // print(int_to_char(secs));
     // print("\n");
-
-    struct DATE date_from_stamp = {0,0,0,0};
    
-    date_from_stamp = get_date_from_stamp(secs);
-
-    // print("get date: ");
-    // print(int_to_char(date_from_stamp.year));
-    // print("/");
-    // print(int_to_char(date_from_stamp.month));
-    // print("/");
-    // print(int_to_char(date_from_stamp.day));
-    // print("\n");
 
     //检查用户权限
     if(!check_permission()){
         print("user permission denied\n\n");
     }else{
         if(set_time(secs)){
-            print("已将日期更改为");
-            print(int_to_char(year));
-            print("/");
-            print(int_to_char(month));
-            print("/");
-            print(int_to_char(day));
-            print("\n");
+            print("日期更改成功\n");
         }else{
             print("日期更改失败\n");
         }
