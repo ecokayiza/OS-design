@@ -5,7 +5,7 @@
 
 
 void display_help(){
-    print("用于比较两个文件并显示不同(逐行比较）\nFC  +data1 +data2 [/c] [/n] [/a] [/b]\n\n");
+    print("用于比较两个文件并显示不同（逐行比较）\nFC  +data1 +data2 [/c] [/n] [/a] [/b]\n\n");
     print("匹配显示:\n*****file1\nprevious line\nline with diff\nnext line\n*****file2\nprevious line\nline with diff\nnext line\n*****\n\n");
     print("匹配模式:\n/c 不区别大小写进行比较。\n/b 执行字节比较,显示如\noffset : byte1 byte2 \n\n显示模式:\n/n 显示行数\n/a 只显示每个不同处的第一行和最后一行。\n\n");
 }

@@ -95,13 +95,37 @@ file2 = diff
 
 ```
 8. FC,
+```
+用于比较两个文件并显示不同（逐行比较）
+FC  +data1 +data2 [/c] [/n] [/a] [/b]
 
+匹配显示:
+*****file1
+previous line
+line with diff
+next line
+*****file2
+previous line
+line with diff
+next line
+*****
 
+匹配模式:
+/c 不区别大小写进行比较。
+/b 执行字节比较,显示如
+offset : byte1 byte2 
 
+显示模式:
+/n 显示行数
+/a 只显示每个不同处的第一行和最后一行。
 
+```
 
 
 9. EXIT,
+
+
+    
 
 10. HELP, 
 
