@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/HELP.dir/source/HELP.c.o -o ../commands/HELP  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 

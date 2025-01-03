@@ -48,5 +48,15 @@
   "directory": "/home/eco/桌面/design/build",
   "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/FC.dir/source/FC.c.o -c /home/eco/桌面/design/source/FC.c",
   "file": "/home/eco/桌面/design/source/FC.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/EXIT.dir/source/EXIT.c.o -c /home/eco/桌面/design/source/EXIT.c",
+  "file": "/home/eco/桌面/design/source/EXIT.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/HELP.dir/source/HELP.c.o -c /home/eco/桌面/design/source/HELP.c",
+  "file": "/home/eco/桌面/design/source/HELP.c"
 }
 ]

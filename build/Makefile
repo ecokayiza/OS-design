@@ -246,6 +246,32 @@ FC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FC.dir/build.make CMakeFiles/FC.dir/build
 .PHONY : FC/fast
 
+#=============================================================================
+# Target rules for targets named EXIT
+
+# Build rule for target.
+EXIT: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 EXIT
+.PHONY : EXIT
+
+# fast build rule for target.
+EXIT/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EXIT.dir/build.make CMakeFiles/EXIT.dir/build
+.PHONY : EXIT/fast
+
+#=============================================================================
+# Target rules for targets named HELP
+
+# Build rule for target.
+HELP: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HELP
+.PHONY : HELP
+
+# fast build rule for target.
+HELP/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/build
+.PHONY : HELP/fast
+
 source/CLS.o: source/CLS.c.o
 .PHONY : source/CLS.o
 
@@ -318,6 +344,30 @@ source/DATE.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DATE.dir/build.make CMakeFiles/DATE.dir/source/DATE.c.s
 .PHONY : source/DATE.c.s
 
+source/EXIT.o: source/EXIT.c.o
+.PHONY : source/EXIT.o
+
+# target to build an object file
+source/EXIT.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EXIT.dir/build.make CMakeFiles/EXIT.dir/source/EXIT.c.o
+.PHONY : source/EXIT.c.o
+
+source/EXIT.i: source/EXIT.c.i
+.PHONY : source/EXIT.i
+
+# target to preprocess a source file
+source/EXIT.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EXIT.dir/build.make CMakeFiles/EXIT.dir/source/EXIT.c.i
+.PHONY : source/EXIT.c.i
+
+source/EXIT.s: source/EXIT.c.s
+.PHONY : source/EXIT.s
+
+# target to generate assembly for a file
+source/EXIT.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EXIT.dir/build.make CMakeFiles/EXIT.dir/source/EXIT.c.s
+.PHONY : source/EXIT.c.s
+
 source/FC.o: source/FC.c.o
 .PHONY : source/FC.o
 
@@ -389,6 +439,30 @@ source/FINDSTR.s: source/FINDSTR.c.s
 source/FINDSTR.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FINDSTR.dir/build.make CMakeFiles/FINDSTR.dir/source/FINDSTR.c.s
 .PHONY : source/FINDSTR.c.s
+
+source/HELP.o: source/HELP.c.o
+.PHONY : source/HELP.o
+
+# target to build an object file
+source/HELP.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/source/HELP.c.o
+.PHONY : source/HELP.c.o
+
+source/HELP.i: source/HELP.c.i
+.PHONY : source/HELP.i
+
+# target to preprocess a source file
+source/HELP.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/source/HELP.c.i
+.PHONY : source/HELP.c.i
+
+source/HELP.s: source/HELP.c.s
+.PHONY : source/HELP.s
+
+# target to generate assembly for a file
+source/HELP.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/source/HELP.c.s
+.PHONY : source/HELP.c.s
 
 source/TIME.o: source/TIME.c.o
 .PHONY : source/TIME.o
@@ -497,9 +571,11 @@ help:
 	@echo "... CLS"
 	@echo "... COMP"
 	@echo "... DATE"
+	@echo "... EXIT"
 	@echo "... FC"
 	@echo "... FIND"
 	@echo "... FINDSTR"
+	@echo "... HELP"
 	@echo "... TIME"
 	@echo "... file"
 	@echo "... time"
@@ -513,6 +589,9 @@ help:
 	@echo "... source/DATE.o"
 	@echo "... source/DATE.i"
 	@echo "... source/DATE.s"
+	@echo "... source/EXIT.o"
+	@echo "... source/EXIT.i"
+	@echo "... source/EXIT.s"
 	@echo "... source/FC.o"
 	@echo "... source/FC.i"
 	@echo "... source/FC.s"
@@ -522,6 +601,9 @@ help:
 	@echo "... source/FINDSTR.o"
 	@echo "... source/FINDSTR.i"
 	@echo "... source/FINDSTR.s"
+	@echo "... source/HELP.o"
+	@echo "... source/HELP.i"
+	@echo "... source/HELP.s"
 	@echo "... source/TIME.o"
 	@echo "... source/TIME.i"
 	@echo "... source/TIME.s"

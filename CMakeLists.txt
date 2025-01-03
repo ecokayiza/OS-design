@@ -41,3 +41,11 @@ target_link_libraries(COMP util file)
 add_executable(FC ${SOURCE}/FC.c)
 set_target_properties(FC PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
 target_link_libraries(FC util file)
+
+add_executable(EXIT ${SOURCE}/EXIT.c)
+set_target_properties(EXIT PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(EXIT util)
+
+add_executable(HELP ${SOURCE}/HELP.c)
+set_target_properties(HELP PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(HELP util)
