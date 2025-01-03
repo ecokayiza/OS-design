@@ -34,8 +34,16 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 /?	在命令提示符下显示帮助。
 ```
 
-##### 4. DOSKEY,  
+4. DOSKEY,  
+```
+目前实现了两个功能，显示历史记录和编辑命令行宏
+DOSKEY [/history] [-mirco -exename] [/reinstall] [/micros] 
 
+/history[:n] 显示历史记录,可指定显示的最大历史数,默认10
+micro=exename 编辑命令行宏
+/reinstall 清除所有宏
+/micros 显示所有宏
+```
 
 5. FIND,
 ```
@@ -49,6 +57,8 @@ FIND [/V] [/C] [/N] [/I]  -[string] +[file path]
   -[string] 指定要搜索的文本字符串。
   +[file path] 文件路径
 ```
+
+
 6. FINDSTR,
 ```
 1-在FIND的基础上添加了多匹配模式与多文件支持
@@ -92,9 +102,10 @@ file2 = diff
  /l 显示行号 
  /d 用十进制显示dff
  /a 用ASCII显示diff
-
 ```
-8. FC,
+
+
+8. FC
 ```
 用于比较两个文件并显示不同（逐行比较）
 FC  +data1 +data2 [/c] [/n] [/a] [/b]
@@ -118,15 +129,27 @@ offset : byte1 byte2
 显示模式:
 /n 显示行数
 /a 只显示每个不同处的第一行和最后一行。
-
 ```
 
 
 9. EXIT,
+```
+退出终端
+```
 
-
-    
 
 10. HELP, 
+```
+显示帮助
+HELP 获取指令概述
+HELP command 某个指令的具体帮助
+```
+
 
 11. MORE，
+```
+用于显示文件内容
+如cat file | MORE
+或者 more < file
+回车显示下一行,空格显示下一页,q退出
+```
