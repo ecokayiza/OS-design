@@ -1,0 +1,99 @@
+OMP /?
+COMP /n
+COMP +1.txt +2.txt /n
+COMP +1.txt +2.txt /n=10
+COMP +1.txt +example1.txt
+COMP +1.txt +example1.txt \n
+COMP +1.txt +example1.txt /n
+
+COMP +1.txt +2.txt 
+COMP +1.txt +2.txt /l
+COMP +1.txt +2.txt
+FIND -one +example.txt /n
+COMP +1.txt +2.txt
+COMP +1.txt +2.txt /l
+FIND -one +example.txt /n
+COMP +1.txt +2.txt /l
+FINDSTR -one +example.txt /n
+FIND -one +example.txt /n
+FINDSTR -one +example.txt /n
+FINDSTR -one +example1.txt /n
+FIND -one +example.txt /n
+FIND -one +example1.txt /n
+COMP +1.txt +2.txt /l
+COMP +1.txt +2.txt 
+COMP +1.txt +2.txt /l
+COMP +1.txt +2.txt /?
+COMP /?
+COMP +1.txt +2.txt /c
+COMP +1.txt +2.txt /l
+COMP +1.txt +2.txt /l /a
+COMP +1.txt +2.txt /l /d
+COMP +1.txt +2.txt /l /a
+COMP +1.txt +2.txt /l /d
+COMP +1.txt +2.txt /l /a
+COMP +1.txt +2.txt /l /d
+COMP +1.txt +2.txt /l /a
+COMP +1.txt +2.txt /l /d
+COMP +1.txt +2.txt /l /a
+COMP +1.txt +2.txt /l 
+COMP +1.txt +1.txt /l 
+COMP +1.txt +1.txt /n=2
+COMP +1.txt +2.txt /n=2
+COMP +1.txt +2.txt /c
+COMP +1.txt +2.txt /l
+COMP +1.txt +2.txt /a
+COMP +1.txt +2.txt /d
+FC /?
+COMP /?
+FC /?
+FC +1.txt +2.txt 
+FC +1.txt +2.txt /n
+FC +1.txt +2.txt /a
+FC +1.txt +2.txt /a /n
+FC +1.txt +2.txt /n 
+FC +1.txt +2.txt /n /a
+FC +1.txt +2.txt /n
+code .
+FC +1.txt +2.txt /n /a
+FC +1.txt +2.txt /n /?
+FC /?
+FC +1.txt +2.txt /n /?
+FC +1.txt +2.txt /b
+FC +1.txt +2.txt /n
+FC +1.txt +2.txt /n /b
+FC +1.txt +2.txt /b
+FC +1.txt +2.txt /c
+FC +1.txt +2.txt 
+FC +1.txt +2.txt /b /c
+FC /?
+code .
+EXIT
+exit
+python
+sudo apt python
+EXIT
+echo -e
+echo
+tldr echo
+EXIT
+EXIT /?
+EXIT
+HELP
+history
+HELP
+HELP CLS
+HELP TIME
+HELP FIND
+HELP EXIT
+HELP MORE
+HELP /?
+HELP
+HELP CLS
+HELP FC
+history
+history
+code .
+cd ~
+ls
+vim ~/.bash_history

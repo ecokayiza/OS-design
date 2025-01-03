@@ -49,3 +49,7 @@ target_link_libraries(EXIT util)
 add_executable(HELP ${SOURCE}/HELP.c)
 set_target_properties(HELP PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
 target_link_libraries(HELP util)
+
+add_executable(DOSKEY ${SOURCE}/DOSKEY.c)
+set_target_properties(DOSKEY PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE})
+target_link_libraries(DOSKEY util)

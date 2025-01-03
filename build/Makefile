@@ -272,6 +272,19 @@ HELP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/build
 .PHONY : HELP/fast
 
+#=============================================================================
+# Target rules for targets named DOSKEY
+
+# Build rule for target.
+DOSKEY: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DOSKEY
+.PHONY : DOSKEY
+
+# fast build rule for target.
+DOSKEY/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DOSKEY.dir/build.make CMakeFiles/DOSKEY.dir/build
+.PHONY : DOSKEY/fast
+
 source/CLS.o: source/CLS.c.o
 .PHONY : source/CLS.o
 
@@ -343,6 +356,30 @@ source/DATE.s: source/DATE.c.s
 source/DATE.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DATE.dir/build.make CMakeFiles/DATE.dir/source/DATE.c.s
 .PHONY : source/DATE.c.s
+
+source/DOSKEY.o: source/DOSKEY.c.o
+.PHONY : source/DOSKEY.o
+
+# target to build an object file
+source/DOSKEY.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DOSKEY.dir/build.make CMakeFiles/DOSKEY.dir/source/DOSKEY.c.o
+.PHONY : source/DOSKEY.c.o
+
+source/DOSKEY.i: source/DOSKEY.c.i
+.PHONY : source/DOSKEY.i
+
+# target to preprocess a source file
+source/DOSKEY.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DOSKEY.dir/build.make CMakeFiles/DOSKEY.dir/source/DOSKEY.c.i
+.PHONY : source/DOSKEY.c.i
+
+source/DOSKEY.s: source/DOSKEY.c.s
+.PHONY : source/DOSKEY.s
+
+# target to generate assembly for a file
+source/DOSKEY.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DOSKEY.dir/build.make CMakeFiles/DOSKEY.dir/source/DOSKEY.c.s
+.PHONY : source/DOSKEY.c.s
 
 source/EXIT.o: source/EXIT.c.o
 .PHONY : source/EXIT.o
@@ -571,6 +608,7 @@ help:
 	@echo "... CLS"
 	@echo "... COMP"
 	@echo "... DATE"
+	@echo "... DOSKEY"
 	@echo "... EXIT"
 	@echo "... FC"
 	@echo "... FIND"
@@ -589,6 +627,9 @@ help:
 	@echo "... source/DATE.o"
 	@echo "... source/DATE.i"
 	@echo "... source/DATE.s"
+	@echo "... source/DOSKEY.o"
+	@echo "... source/DOSKEY.i"
+	@echo "... source/DOSKEY.s"
 	@echo "... source/EXIT.o"
 	@echo "... source/EXIT.i"
 	@echo "... source/EXIT.s"

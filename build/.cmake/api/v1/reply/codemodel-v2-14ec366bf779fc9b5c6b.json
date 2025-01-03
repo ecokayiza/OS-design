@@ -26,7 +26,8 @@
 						8,
 						9,
 						10,
-						11
+						11,
+						12
 					]
 				}
 			],
@@ -52,7 +53,8 @@
 						8,
 						9,
 						10,
-						11
+						11,
+						12
 					]
 				}
 			],
@@ -77,6 +79,13 @@
 					"id" : "DATE::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-DATE-Debug-ea71bb8a3389b231efe9.json",
 					"name" : "DATE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DOSKEY::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DOSKEY-Debug-c8f145e566aca8cbb6c8.json",
+					"name" : "DOSKEY",
 					"projectIndex" : 0
 				},
 				{

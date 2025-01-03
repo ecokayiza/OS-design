@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/DOSKEY.dir/source/DOSKEY.c.o -o ../commands/DOSKEY  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 

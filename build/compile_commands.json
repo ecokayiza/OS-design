@@ -58,5 +58,10 @@
   "directory": "/home/eco/桌面/design/build",
   "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/HELP.dir/source/HELP.c.o -c /home/eco/桌面/design/source/HELP.c",
   "file": "/home/eco/桌面/design/source/HELP.c"
+},
+{
+  "directory": "/home/eco/桌面/design/build",
+  "command": "/usr/bin/cc  -I/home/eco/桌面/design/include -g -o CMakeFiles/DOSKEY.dir/source/DOSKEY.c.o -c /home/eco/桌面/design/source/DOSKEY.c",
+  "file": "/home/eco/桌面/design/source/DOSKEY.c"
 }
 ]

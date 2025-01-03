@@ -10,5 +10,6 @@
 /home/eco/桌面/design/build/CMakeFiles/FC.dir
 /home/eco/桌面/design/build/CMakeFiles/EXIT.dir
 /home/eco/桌面/design/build/CMakeFiles/HELP.dir
+/home/eco/桌面/design/build/CMakeFiles/DOSKEY.dir
 /home/eco/桌面/design/build/CMakeFiles/edit_cache.dir
 /home/eco/桌面/design/build/CMakeFiles/rebuild_cache.dir
