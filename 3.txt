@@ -24,7 +24,7 @@ COMP +1.txt +2.txt /l
 COMP +1.txt +2.txt 
 COMP +1.txt +2.txt /l
 COMP +1.txt +2.txt /?
-COMP /?
+192.168.1.1
 COMP +1.txt +2.txt /c
 COMP +1.txt +2.txt /l
 COMP +1.txt +2.txt /l /a
@@ -62,7 +62,7 @@ FC +1.txt +2.txt /n /?
 FC +1.txt +2.txt /b
 FC +1.txt +2.txt /n
 FC +1.txt +2.txt /n /b
-FC +1.txt +2.txt /b
+192.168.2.10
 FC +1.txt +2.txt /c
 FC +1.txt +2.txt 
 FC +1.txt +2.txt /b /c

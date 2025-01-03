@@ -132,10 +132,10 @@ struct LINE_INFO* multi_search(FILE *file, const char *patterns_p[],int pattern_
     int i = 0;
     char *patterns[pattern_count];
 
-    for(int j = 0; j < pattern_count; j++){
-        print(patterns_p[j]);
-        print("\n");
-    }
+    // for(int j = 0; j < pattern_count; j++){
+    //     print(patterns_p[j]);
+    //     print("\n");
+    // }
     if(r_option){
         regex_t regex;
         int reti;

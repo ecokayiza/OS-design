@@ -12,6 +12,7 @@ void display_help(){
 int get_terminal_rows() {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    //TIOCGWINSZ请求码用于获取终端窗口的大小。
     return w.ws_row;
 }
 
