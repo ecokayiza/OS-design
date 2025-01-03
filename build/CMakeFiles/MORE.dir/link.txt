@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/MORE.dir/source/MORE.c.o -o ../commands/MORE  -Wl,-rpath,/home/eco/桌面/design/build libutil.so 

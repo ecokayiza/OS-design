@@ -285,6 +285,19 @@ DOSKEY/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DOSKEY.dir/build.make CMakeFiles/DOSKEY.dir/build
 .PHONY : DOSKEY/fast
 
+#=============================================================================
+# Target rules for targets named MORE
+
+# Build rule for target.
+MORE: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MORE
+.PHONY : MORE
+
+# fast build rule for target.
+MORE/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MORE.dir/build.make CMakeFiles/MORE.dir/build
+.PHONY : MORE/fast
+
 source/CLS.o: source/CLS.c.o
 .PHONY : source/CLS.o
 
@@ -501,6 +514,30 @@ source/HELP.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HELP.dir/build.make CMakeFiles/HELP.dir/source/HELP.c.s
 .PHONY : source/HELP.c.s
 
+source/MORE.o: source/MORE.c.o
+.PHONY : source/MORE.o
+
+# target to build an object file
+source/MORE.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MORE.dir/build.make CMakeFiles/MORE.dir/source/MORE.c.o
+.PHONY : source/MORE.c.o
+
+source/MORE.i: source/MORE.c.i
+.PHONY : source/MORE.i
+
+# target to preprocess a source file
+source/MORE.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MORE.dir/build.make CMakeFiles/MORE.dir/source/MORE.c.i
+.PHONY : source/MORE.c.i
+
+source/MORE.s: source/MORE.c.s
+.PHONY : source/MORE.s
+
+# target to generate assembly for a file
+source/MORE.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MORE.dir/build.make CMakeFiles/MORE.dir/source/MORE.c.s
+.PHONY : source/MORE.c.s
+
 source/TIME.o: source/TIME.c.o
 .PHONY : source/TIME.o
 
@@ -614,6 +651,7 @@ help:
 	@echo "... FIND"
 	@echo "... FINDSTR"
 	@echo "... HELP"
+	@echo "... MORE"
 	@echo "... TIME"
 	@echo "... file"
 	@echo "... time"
@@ -645,6 +683,9 @@ help:
 	@echo "... source/HELP.o"
 	@echo "... source/HELP.i"
 	@echo "... source/HELP.s"
+	@echo "... source/MORE.o"
+	@echo "... source/MORE.i"
+	@echo "... source/MORE.s"
 	@echo "... source/TIME.o"
 	@echo "... source/TIME.i"
 	@echo "... source/TIME.s"

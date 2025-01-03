@@ -1,0 +1,138 @@
+How to execute something in current shell [duplicate]
+Asked 5 years, 7 months ago
+Modified 5 years, 7 months ago
+Viewed 3k times
+2
+
+This question already has answers here:
+Different ways to execute a shell script (8 answers)
+Closed 5 years ago.
+I want to create a bash script or something similar that I can execute in the current shell:
+
+ echo '#!/bin/bash 
+  export foo="bar" ' > zoom.sh
+but if I want to run this script in the current process:
+
+exec ./zoom.sh
+then my terminal will just exit "process completed", even if I use set +e, it still exits.
+
+There's source and eval which will run stuff in the current shell, so maybe eval is my best bet? A bash function will work - but I have to rely on the user to source it in the first place.
+
+shellexeceval
+Share
+Improve this question
+Follow
+edited May 31, 2019 at 5:05
+asked May 31, 2019 at 4:48
+Alexander Mills's user avatar
+Alexander Mills
+10.5k2626 gold badges112112 silver badges200200 bronze badges
+2
+You use source or .. eval is for strings. – 
+muru
+ CommentedMay 31, 2019 at 4:55
+3
+What are you actually trying to accomplish? Depending on the real goal, any of a number of approaches might be best. – 
+Gordon Davisson
+ CommentedMay 31, 2019 at 5:43
+just trying to change the current shell - like alter the PATH using export PATH= that kind of thing. – 
+Alexander Mills
+ CommentedMay 31, 2019 at 6:02
+2
+@AlexanderMills This is exactly what source is for. – 
+Kusalananda
+♦
+ CommentedMay 31, 2019 at 7:02
+Add a comment
+1 Answer
+Sorted by:
+
+Highest score (default)
+2
+
+From manual, looks like exec will not create new process it just replace the current shell, so after execution it will terminate the session too.
+
+exec [-cl] [-a name] [command [arguments]]:
+If command is specified, it replaces the shell. No new process is created. The arguments become the arguments to command. If the -l option is supplied, the shell places a dash at the beginning of the zeroth argument passed to command. This is what login(1) does. The -c option causes command to be executed with an empty environment. If -a is supplied, the shell passes name as the zeroth argument to the executed command. If command cannot be executed for some reason, a non-interactive shell exits, unless the shell option execfail is enabled, in which case it returns failure. An interactive shell returns failure if the file cannot be executed. If command is not specified, any redirections take effect in the current shell, and the return status is 0. If there is a redirection error, the return status is 1.
+
+$ cat zoom.sh
+#!/bin/bash
+export foo="bar"
+echo $?
+$ exec ./zoom.sh
+0
+Connection to localhost closed
+Share
+Improve this answer
+Follow
+edited May 31, 2019 at 8:03
+muru's user avatar
+muru
+75.7k1515 gold badges206206 silver badges307307 bronze badges
+answered May 31, 2019 at 5:37
+user355623
+Add a comment
+Not the answer you're looking for? Browse other questions tagged shellexeceval.
+The Overflow Blog
+Developers want more, more, more: the 2024 results from Stack Overflow’s...
+How AI apps are like Google Search
+Featured on Meta
+The December 2024 Community Asks Sprint has been moved to March 2025 (and...
+Stack Overflow Jobs is expanding to more countries
+Linked
+46
+Different ways to execute a shell script
+Related
+1
+Executing bash shell scripts
+5
+Is it possible to exec some commands in a subshell without immediately exiting afterwards?
+0
+Shell Script: Use "find" to execute shell a command that contains "filename"(without extension) returned from "find"
+2
+How to let sudo fork bash instead of sh?
+0
+will the sleep command in this command ever be executed?
+2
+Cron jobs monitoring using exit code
+1
+Execute program in current shell within shell script
+1
+How can I make backticks execute on shell script that backgrounds job
+Hot Network Questions
+Is it in the sequence? (sum of the first n cubes)
+Should I use ChatGPT and Wolfram Mathematica as a student?
+Pressing electric guitar strings out of tune
+Are Shell Script --long-options POSIX compatible?
+Why is the United Kingdom often considered a country, but the European Union isn't?
+Is there a compile command to scan the labels only?
+Untrained neural network models
+more hot questions
+Unix & Linux
+Tour
+Help
+Chat
+Contact
+Feedback
+Company
+Stack Overflow
+Teams
+Advertising
+Talent
+About
+Press
+Legal
+Privacy Policy
+Terms of Service
+Cookie Settings
+Cookie Policy
+Stack Exchange Network
+Technology
+Culture & recreation
+Life & arts
+Science
+Professional
+Business
+API
+Data
+Blog

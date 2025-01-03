@@ -1,9 +1,8 @@
-#include <stdio.h>
+
 #include <stdlib.h>
 #include <string.h>
 #include "functions.h"
 
-#define MAX_HISTORY 100
 #define MAX_COMMAND_LENGTH 1024
 
 void display_help(){

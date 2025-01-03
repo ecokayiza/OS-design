@@ -52,4 +52,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/EXIT.dir/DependInfo.cmake"
   "CMakeFiles/HELP.dir/DependInfo.cmake"
   "CMakeFiles/DOSKEY.dir/DependInfo.cmake"
+  "CMakeFiles/MORE.dir/DependInfo.cmake"
   )

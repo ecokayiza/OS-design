@@ -27,7 +27,8 @@
 						9,
 						10,
 						11,
-						12
+						12,
+						13
 					]
 				}
 			],
@@ -54,7 +55,8 @@
 						9,
 						10,
 						11,
-						12
+						12,
+						13
 					]
 				}
 			],
@@ -121,6 +123,13 @@
 					"id" : "HELP::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-HELP-Debug-d9cd4d5e793be34c4c83.json",
 					"name" : "HELP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MORE::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MORE-Debug-9a39d7a1c7d23da7c23c.json",
+					"name" : "MORE",
 					"projectIndex" : 0
 				},
 				{
